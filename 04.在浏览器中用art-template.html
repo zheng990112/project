@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+<!--引入第三方的模板文件中的lib/template-web.js-->
+<script src="node_modules/art-template/lib/template-web.js"></script>
+<script type="text/html" id="tpl">
+{{name}}
+    <p>我的爱好是：{{each like}} {{$value}} {{/each}}</p>
+</script>
+<script>
+    var html = template("tpl",{
+        name:"zhang",
+        like:["唱歌","写代码","打游戏"]
+    });
+    document.getElementById("body").innerHTML=html;
+</script>
+</body>
+</html>
